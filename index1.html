@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.14/babel.min.js" integrity="sha512-Ex7PgDaBwk2r9iEC7/pmpPCwq8NvYo7tYd5sSb/VA4BOxkP0sKMcqe7lqpyGcYeLrxYV63VZc0WtbgMIFhiJPA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js" integrity="sha512-m7nhpWHotpucPI37I4lPovL28Bm2BhAMV8poF3F8Z9oOEZ3jlxGzkgvG0EMt1mVL1xydr1erlBbmN90js/ssUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.min.js" integrity="sha512-I5GJQRKGdj2miDs8ComgARfiAQiZJo/43YasH22qtweoG+YRXLTDYegxC/vPgw/ERxRzww/F4l4+8UiMmI20sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container d-none">
+        <table class="table table-striped-columns">
+            <tr>
+                <th>#</th>
+                <td>Задача</td>
+                <td>Дедлайн</td>
+                <td>Статус</td>
+                <td>Действия</td>
+            </tr>
+
+            <tr>
+                <th>1</th>
+                <td>Купить хлеб</td>
+                <td>10:00</td>
+                <td>Просрочена</td>
+                <td>
+                    <button class="btn btn-primary">Готово</button>
+                    <button class="btn btn-danger">Удалить</button>
+                </td>
+            </tr>
+            
+            <tr>
+                <th>2</th>
+                <td>Покормить кота</td>
+                <td>12:00</td>
+                <td>Ожидает</td>
+                <td>
+                    <button class="btn btn-primary">Готово</button>
+                    <button class="btn btn-danger">Удалить</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th>3</th>
+                <td>Сделать лабу по мобилке</td>
+                <td>18:00</td>
+                <td>Ожидает</td>
+                <td>
+                    <button class="btn btn-primary">Готово</button>
+                    <button class="btn btn-danger">Удалить</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4">&nbsp;</td>
+                <td>
+                    <button class="btn btn-success">Создать</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+   <div class="popup d-none"> 
+        <div class="popup__body">
+            <table class="table">
+                <tr>
+                    <th class="text-center" colspan="2">Новая задача</th>
+                </tr>
+                <tr>
+                    <th>Задача</th>
+                    <td><input type="text" name="" id="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>Дедлайн</th>
+                    <td><input type="datetime-local" name="" id="" class="form-control"></td>
+                </tr>
+                <tr>
+                   <td colspan="2" class="text-center">
+                        <button class="btn btn-info btn__color">Добавить</button>
+                   </td> 
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="root"></div>
+    <script type="text/babel" src="todolist.jsx"></script>
+    <script type="text/babel">
+        let root = document.querySelector('#root');
+        let reactRoot = ReactDOM.createRoot(root);
+        reactRoot.render(<TodoList />)
+    </script>
+</body>
+</html>
